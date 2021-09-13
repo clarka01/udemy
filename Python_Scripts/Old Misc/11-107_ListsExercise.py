@@ -1,0 +1,20 @@
+source": [
+    # Create a list called instructors\n",
+    instructors =[]\n",
+    # Add the following strings to the instructors list \n",
+        # \"Colt\"\n",
+        # \"Blue\"\n",
+        # \"Lisa\"\n",
+    instructors.extend([\"Colt\", \"Blue\", \"Lisa\"])\n",
+    # Remove the last value in the list\n",
+    instructors.pop()\n",
+    \n",
+    # Remove the first value in the list\n",
+    instructors.remove(\"Colt\") # or instructors.pop(0)\n",
+    \n",
+    # Add the string \"Done\" to the beginning of the list\n",
+    instructors.insert(0, \"Done\")\n",
+    \n",
+    # Run the tests to make sure you've done this correctly!\n",
+    print(instructors)"
+  
