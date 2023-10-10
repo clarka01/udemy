@@ -1,4 +1,3 @@
-#%%
 
 """""""""""
 NumPy Coding
@@ -20,8 +19,6 @@ MNP3 = np.dot(NP1,NP2)
 MNP2 = NP1*NP2
 
 MNP4 = np.multiply(NP1,NP2)
-
-#%%
 
 Sum1 = NP1+NP2
 
