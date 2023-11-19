@@ -27,3 +27,4 @@ plt.title('Truth or Bluff (Random Forest Regression)')
 plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
+

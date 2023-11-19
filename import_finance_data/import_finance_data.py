@@ -55,7 +55,7 @@ pd.options.display.max_rows = 999
 #======================
 
 # SIRIUS = os.environ['SIRIUS']
-sys.path.append(r'C:\Users\clarka\Documents\SIRIUS\pythlib')
+sys.path.append(r'C:\Users\clark\Documents\LOCAL_REPO\libraries\date_utils_hbb')
 
 
 from date_lib import date_utils_hbb as du
@@ -67,6 +67,7 @@ today_date = datetime.today()  # with datetime
 today = datetime.today().strftime('%Y-%m-%d') 
 
 time_stamp = datetime.today().strftime('%Y-%m-%d @ %H:%M') 
+#%%
 fdolm = du.get_1st_of_last_month().strftime('%Y-%m')
 ldolm = f'{du.get_last_of_last_month():%Y-%m-%d}'
 fdom12ma = f'{du.get_1st_of_last_n_month(12):%Y-%m-%d}'

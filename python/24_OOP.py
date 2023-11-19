@@ -2,6 +2,21 @@
 
 # CLASSES & OBJECT ORIENTED PROGRAMMING
 
+'''   Define OOP
+    # understand encapsulation and abstraction
+    # create classes and instances and attach methods and properties to each
+    # Create classes and instances and attach
+        # methods and properties to each
+
+    # Class: blueprint for creating new objects
+    # Object: instance of a class
+
+    # encapsulation: bundling of data and methods that act on that data
+    # abstraction: hiding of information and giving access to only what is necessary
+'''
+
+
+
 class User:
     def __init__(self, first, last, age):
         self.first = first
