@@ -168,7 +168,7 @@ Important note 1: Notice that the values of the features were all input
                   "predict" method always expects a 2D array as the format 
                   of its inputs. And putting our values into a double pair 
                   of square brackets makes the input exactly a 2D array.
-                  
+
 Important note 2: Notice also that the "France" country was not input 
                   as a string in the last column but as "1, 0, 0" in the 
                   first three columns. That's because of course the predict 
@@ -184,6 +184,7 @@ y_pred = ann.predict(X_test)
 y_pred = (y_pred > 0.5)
 print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
 
+#%%
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix, accuracy_score
 cm = confusion_matrix(y_test, y_pred)

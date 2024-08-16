@@ -552,7 +552,11 @@ A_pt = torch.tensor([[3, 4], [5, 6], [7, 8]])
 A_pt
 b_pt = torch.tensor([1, 2])
 b_pt
-torch.matmul(A_pt, b_pt) # like np.dot(), automatically infers dims in order to perform dot product, matvec, or matrix multiplication
+torch.matmul(A_pt, b_pt) # like np.dot(), 
+                         # automatically infers dims in order 
+                         # to perform dot product, matvec, or 
+                         # matrix multiplication
+
 A_tf = tf.Variable([[3, 4], [5, 6], [7, 8]])
 A_tf
 b_tf = tf.Variable([1, 2])
@@ -588,7 +592,7 @@ tf.matmul(A_tf, B_tf)
 X_sym = np.array([[0, 1, 2], [1, 7, 8], [2, 8, 9]])
 X_sym
 X_sym.T
-X_sym.T == X_sym
+X_sym.T == X_sym #assertion 
 
 
 #%% ### Identity Matrices
@@ -600,6 +604,9 @@ x_pt = torch.tensor([25, 2, 5])
 x_pt
 
 torch.matmul(I, x_pt)
+
+x_pt == torch.matmul(I, x_pt) #assert they're equal
+
 
 
 #%% ### Answers to Matrix Multiplication Qs
@@ -636,7 +643,7 @@ w
 np.dot(X, w)
 
 
-# **Geometric Visualization**
+#%% **Geometric Visualization**
 # 
 # Recalling from the slides that the two equations in the system are:
 # $$ 4b + 2c = 4 $$
@@ -688,17 +695,21 @@ tf.linalg.inv(tf.Variable([[4, 2], [-5, -3.]])) # also float
 
 #%% ### Matrix Inversion Where No Solution
 
-X = np.array([[-4, 1], [-8, 2]])
+X = np.array([[-4, 1], [-8, 2]]) # singular matrix)
 X
 # Uncommenting the following line results in a "singular matrix" error
-# Xinv = np.linalg.inv(X)
+try:
+    Xinv = np.linalg.inv(X)
+except Exception as e:
+    print(f'ISSUES: {e}')
 
 
 # Feel free to try inverting a non-square matrix; this will throw an error too.
-# 
-# **Return to slides here.**
+ 
 
-# ### Orthogonal Matrices
+
+
+#%% ### Orthogonal Matrices
 # 
 # These are the solutions to Exercises 3 and 4 on **orthogonal matrices** from the slides.
 # 
@@ -721,7 +732,8 @@ np.dot(column_1, column_3)
 np.dot(column_2, column_3)
 
 
-# We can use the `np.linalg.norm()` method from earlier in the notebook to demonstrate that each column of $I_3$ has unit norm: 
+# We can use the `np.linalg.norm()` method from earlier 
+# in the notebook to demonstrate that each column of $I_3$ has unit norm: 
 np.linalg.norm(column_1)
 np.linalg.norm(column_2)
 np.linalg.norm(column_3)
@@ -751,13 +763,24 @@ torch.norm(Kcol_2)
 torch.norm(Kcol_3)
 
 
-# We've now determined that, in addition to being orthogonal, the columns of $K$ have unit norm, therefore they are orthonormal. 
+# We've now determined that, in addition to being orthogonal, 
+# the columns of $K$ have unit norm, therefore they are orthonormal. 
 # 
-# To ensure that $K$ is an orthogonal matrix, we would need to show that not only does it have orthonormal columns but it has orthonormal rows are as well. Since $K^T \neq K$, we can't prove this quite as straightforwardly as we did with $I_3$. 
+# To ensure that $K$ is an orthogonal matrix, 
+# we would need to show that not only does it have orthonormal columns 
+# but it has orthonormal rows are as well. Since $K^T \neq K$, 
+# we can't prove this quite as straightforwardly as we did with $I_3$. 
 # 
-# One approach would be to repeat the steps we used to determine that $K$ has orthogonal columns with all of the matrix's rows (please feel free to do so). Alternatively, we can use an orthogonal matrix-specific equation from the slides, $A^TA = I$, to demonstrate that $K$ is orthogonal in a single line of code: 
+# One approach would be to repeat the steps we used to 
+# determine that $K$ has orthogonal columns
+# with all of the matrix's rows (please feel free to do so). 
+# Alternatively, we can use an 
+# orthogonal matrix-specific equation from the slides, 
+# $A^TA = I$, to demonstrate that 
+# $K$ is orthogonal in a single line of code: 
 
 torch.matmul(K.T, K)
 
 
-# Notwithstanding rounding errors that we can safely ignore, this confirms that $K^TK = I$ and therefore $K$ is an orthogonal matrix. 
+# Notwithstanding rounding errors that we can safely ignore, 
+# this confirms that $K^TK = I$ and therefore $K$ is an orthogonal matrix. 
