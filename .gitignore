@@ -1,2 +1,18 @@
 rag_backup/Exercise Files/4-Document specific splitting/4.4-document-specific-splitting/3-pdf/starter/env/lib/python3.12/site-packages/
+*.csv
+*.pdf
+*.txt
+.DS_Store
+*.md
+.env*
+*.jpg
 
+rag_backup/Exercise Files/4-Document specific splitting/4.4-document-specific-splitting/3-pdf/starter/env/bin/
+*.one
+*.wav
+*.mp3
+*._final
+*.example
+*.onetoc2
+*.h
+*.1
